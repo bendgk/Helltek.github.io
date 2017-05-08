@@ -13,19 +13,18 @@ PIXI.settings.SCALE_MODE = PIXI.SCALE_MODES.NEAREST;
 
 var sprite = Sprite.fromImage('res/square.png');
 
-sprite.anchor.set(0.5);
+sprite.anchor.set(0);
 sprite.x = 0;
 sprite.y = 0;
 
 sprite.interactive = true;
 sprite.buttonMode = true;
 
-// Pointers normalize touch and mouse
 sprite.on('pointerdown', onClick);
 
 app.stage.addChild(sprite);
 
 function onClick () {
-    sprite.scale.x *= 1.25;
-    sprite.scale.y *= 1.25;
+    sprite.width += 10;
+    sprite.height += 10;
 }
